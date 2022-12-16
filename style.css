@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #404040;
+    margin: 0px;
+}
+
+/* =================
+    Typography 
+   ================= */
+
+/* 
+  Challenge: Set the initial styles for text
+    - Set the h1 to a relative font-size value equal to 40px
+    - Apply a text shadow to the h1 using the color value #816fca
+*/
+
+h1 {
+    font-weight: 400;
+    font-size: 2.5rem;
+    text-shadow: 0 2px #816fca;
+}
+/* 
+  Challenge: Set the initial styles for text
+    - Set the h2 to a relative font-size value equal to 36px
+    - Give the h2 a top and bottom margin value in em equal to 6px
+*/
+h2 {
+    font-size: 2.25rem;
+    margin: 0.167em 0em ; 
+     /* divide by h2 current font size value - 36px */
+}
+
+.beta-text { 
+    font-weight: 900;
+    text-transform: uppercase;
+    
+}
+
+/* 
+  Challenge: Set the initial styles for text
+    - Set the paragraph to a relative font-size value equal to 18px
+    - Set the p line-height to 1.35 times its font-size value
+    - Give .subheading a bottom margin in em equal to half its font-size value
+*/
+
+.subheading {
+    color: #575757;
+    font-weight: 900;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.125rem;
+    line-height: 1.35;
+}
+
+/* 
+  Challenge: 
+    Adjust the visual order of .top-text and re-distribute
+    the space inside .intro: 
+      - Display .top-text above the h1 and align it to 
+        the top edge of the .intro section
+      - Evenly distribute the content inside .intro
+      - The top border of .top-text should match the width of the text
+*/
+
+.top-text {
+    order: -1;
+    font-size: 0.875rem;
+    font-weight: 900;
+    padding-top: 0.25em;
+    border-top: 5px solid;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+
+.fine-print {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #858585;
+}
+
+/* =================
+    Flex containers
+   ================= */
+
+   .intro,
+   .main-content {
+       display: flex;
+       flex-direction: column; 
+       padding-left: 2em;
+    padding-right: 2em;     
+   }
+
+
+/* =================
+    Intro
+   ================= */
+/* 
+  Challenge: Style the .intro section
+    - Convert into a flex container; 
+      display its content in a column
+    - Set a minimum height of 250px
+    - Center-align its content
+    - Vertically center the content
+    - Remove the space around the edges of the page
+*/  
+ 
+/* 
+  Challenge: Apply a full background image
+    - Set the background of .intro to the image `intro-bg.png`
+    - The background image should scale to fill the entire
+      width and height of .intro while preserving its ratio
+*/
+
+.intro { 
+    color: #fff;
+    background-color: #9480e4;
+    justify-content: space-between;
+    text-align: center;
+    min-height: 250px;
+    background: #9480e4 url("images/intro-bg.png");
+    background-size: cover;
+    padding-bottom: 1em;
+   
+}
+
+/* ====================
+    Main content
+   ==================== */
+/* 
+  Challenge: Style the main content
+    - Use flexbox to horizontally center all items inside 
+      .main-content. The <p> text should remain left-aligned.
+    - Use em to give .main-content a top padding equal to 40px
+      and a left and right padding equal to 32px.
+    - Set the width of .img-main to 120px and display it as a rounded image.
+    */
+    .main-content {
+        align-items: center;
+        
+        background-color: cornsilk;  
+    }
+    
+   
+    
+    .img-main {
+        width: 130px;
+        height: 135px;
+        border-radius: 50%;
+    }
+    
+/* =================
+    Form
+   ================= */
+   /* 
+  Challenge: Style the form inputs
+    - Display each input on a separate line so they
+      expand to the full width of their container
+    - Use a bottom margin to create space between the input elements
+    - Apply a padding in em that's equal to half the input's
+      font-size to all 4 sides
+*/
+/* 
+  Challenge: Style the form inputs
+    - Give the inputs a solid 2px border using the value #d1d5db
+    - Round the corners of the input fields by 5px
+    - On focus, update an input’s border color to #8a71ec
+      and background color to #e6e8ec
+*/
+
+.main-content p,form {
+    max-width: 400px;
+}
+
+input {
+    font-family: inherit;
+    padding: 0.5em;
+    margin-bottom: 0.75em;
+    width: 100%;
+    border: 2px solid #d1d5db;
+    border-radius: 5px;
+}
+
+input:focus {
+border-color: #8a71ec ;
+background-color: #e6e8ec;
+outline: none;
+}
+/* 
+  Challenge: Style the submit button
+    - The button should have the same font-family, width
+      and border-radius of the input elements
+    - Use the .btn selector to set the custom button styles;
+      use the slide as a guide
+    - Button colors:
+      - Background: #8a71ec
+      - Background on hover: #b7a7f6
+*/
+
+
+
+.btn {
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: 1em 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #8a71ec;
+    margin-top: 1em;    
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #b7a7f6;
+}
+
+/* =================
+    Media queries 
+   ================= */
+  /* 
+  Challenge: Adjust the layout for wider screens
+    - Add a media query that targets a browser width of 576px or wider
+    - Within the media query, convert the parent element of .intro and 
+      .main-content to a flex container
+    - Set the width .intro and .main-content to exactly
+      half the total width of their parent container
+*/
+@media (min-width: 576px) {
+    body {
+        display: flex;
+        
+    }
+    .intro, .main-content {
+        width: 50%;
+    }
+    /* 
+  Challenge:
+    - Expand the height of .intro so that it takes up
+      the full height of the browser window
+*/
+.intro {
+    min-height: 100vh;
+}
+.main-content{
+    justify-content: center;
+    padding-top: 0em;
+}
+/* 
+  Challenge: Adjust text for wider screens
+    - In the media query, increase the h1 font-size to
+      a rem value equal to 52px
+    - Increase the h2 font-size to a rem value equal to 42px
+    - Increase the font-size of .beta-text to a 
+      rem value equal to 20px
+*/
+h1 {
+    font-size: 5vw;
+}
+h2{
+    font-size: 2.625rem;
+}
+.beta-text {
+    font-size: 1.25rem;
+}
+}
